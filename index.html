@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kid-Friendly Banking</title>
+    <style>
+      body {
+        background-color: #6dff6d; /* A vibrant green background */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #ff5733; /* A playful orange color */
+        font-size: 18px;
+      }
+
+      input,
+      button {
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 5px;
+      }
+
+      button {
+        background-color: #ffc107; /* A bright yellow button */
+        color: #333;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #ffd700; /* Lighter yellow on hover */
+      }
+
+      #goalProgress {
+        color: #4caf50; /* A calming green color */
+        font-size: 20px;
+      }
+
+      /* Progress bar styles */
+      .progress-container {
+        width: 40%;
+        background-color: #ddd;
+      }
+
+      .progress-bar {
+        width: 0;
+        height: 30px;
+        background-color: #4caf50; /* A calming green color */
+        text-align: center;
+        line-height: 30px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Your Piggy Bank</h1>
+    <h2>Savings Account Balance: $<span id="savingsBalance">0.00</span></h2>
+    <input type="number" id="savingsAmount" placeholder="Amount" />
+    <button id="addToSavings">Add to Savings</button>
+    <button id="subtractFromSavings">Spend from Savings</button>
+    <h2>Goal: $<span id="goalAmount">0.00</span></h2>
+    <input type="number" id="goalTarget" placeholder="Set Goal" />
+    <button id="setGoal">Set Goal</button>
+    <h2>Amount Toward Goal: $<span id="goalProgress">0.00</span></h2>
+
+    <!-- Progress bar container -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
