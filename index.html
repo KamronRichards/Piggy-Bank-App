@@ -52,7 +52,7 @@
 
       /* Progress bar styles */
       .progress-container {
-        width: 40%;
+        width: 100%;
         background-color: #ddd;
       }
 
@@ -67,21 +67,34 @@
     </style>
   </head>
   <body>
-    <br />
-    <img src="/images/piggy.avif" alt="piggybank" width="100" height="130" />
-    <h1>Welcome to Your Piggy Bank</h1>
-    <h2>Savings Account Balance: $<span id="savingsBalance">0.00</span></h2>
-    <input type="number" id="savingsAmount" placeholder="Amount" />
-    <button id="addToSavings">Add to Savings</button>
-    <button id="subtractFromSavings">Spend from Savings</button>
-    <h2>Goal: $<span id="goalAmount">0.00</span></h2>
-    <input type="number" id="goalTarget" placeholder="Set Goal" />
-    <button id="setGoal">Set Goal</button>
-    <h2>Amount Toward Goal: <span id="goalProgress">0.00</span></h2>
+    <div>
+      <br />
+      <center>
+        <img
+          src="/images/piggy.avif"
+          alt="piggybank"
+          width="100"
+          height="130"
+        />
+      </center>
+      <h1>Welcome to Your Piggy Bank</h1>
+    </div>
+    <div>
+      <h2>Savings Account Balance: $<span id="savingsBalance">0.00</span></h2>
+      <input type="number" id="savingsAmount" placeholder="Amount" />
+      <button id="addToSavings">Add to Savings</button>
+      <button id="subtractFromSavings">Spend from Savings</button>
+    </div>
+    <div>
+      <h2>Goal: $<span id="goalAmount">0.00</span></h2>
+      <input type="number" id="goalTarget" placeholder="Set Goal" />
+      <button id="setGoal">Set Goal</button>
+      <h2>Amount Toward Goal: <span id="goalProgress">0.00</span></h2>
 
-    <!-- Progress bar container -->
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar">0%</div>
+      <!-- Progress bar container -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0%</div>
+      </div>
     </div>
   </body>
   <script src="app.js"></script>
