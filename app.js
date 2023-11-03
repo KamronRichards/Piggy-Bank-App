@@ -8,7 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("savingsBalance").textContent =
       savingsBalance.toFixed(2);
     updateGoalProgress(); // Call to update the progress bar
+
+    // Check if the goal is set and met
+    if (goalAmount > 0 && savingsBalance >= goalAmount) {
+      // Display the congratulatory message
+      document.getElementById("goalProgress").textContent =
+        "Congrats! Goal Met!";
+
+      // Update the progress bar to 100%
+      document.getElementById("progressBar").style.width = "100%";
+    }
   }
+
+  // Update savings balance on the UI --Previous Code
+  // function updateSavingsBalance() {
+  //   document.getElementById("savingsBalance").textContent =
+  //     savingsBalance.toFixed(2);
+  //   updateGoalProgress(); // Call to update the progress bar
+  // }
 
   // Update goal amount and progress on the UI
   function updateGoal() {
