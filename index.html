@@ -4,7 +4,7 @@
     <title>Kid-Friendly Banking</title>
     <style>
       body {
-        background-color: #6dff6d; /* A vibrant green background */
+        background-color: #c2efc2; /* A green background */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,7 +23,7 @@
 
       h2 {
         text-align: center;
-        color: #ff5733; /* A playful orange color */
+        color: black; /* A playful orange color */
         font-size: 18px;
       }
 
@@ -46,7 +46,7 @@
       }
 
       #goalProgress {
-        color: #ff5733; /* #4caf50; A calming green color */
+        color: black; /* #4caf50; A calming green color */
         font-size: 20px;
       }
 
@@ -86,9 +86,12 @@
       <button id="subtractFromSavings">Spend from Savings</button>
     </div>
     <div>
+      <br />
       <h2>Goal: $<span id="goalAmount">0.00</span></h2>
       <input type="number" id="goalTarget" placeholder="Set Goal" />
       <button id="setGoal">Set Goal</button>
+      <br />
+      <br />
       <h2>Amount Toward Goal: <span id="goalProgress">0.00</span></h2>
 
       <!-- Progress bar container -->
