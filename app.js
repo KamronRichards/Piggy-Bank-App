@@ -3,6 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
   let goalAmount = 0;
   let goalProgress = 0;
 
+  // Function to clear input field after action
+  function clearInputField(inputId) {
+    document.getElementById(inputId).value = "";
+  }
+
+  // Function to display a celebratory message
+  function displayCelebratoryMessage(message) {
+    const celebratoryMessage = document.createElement("div");
+    celebratoryMessage.className = "celebratory-message";
+    celebratoryMessage.textContent = message;
+    document.body.appendChild(celebratoryMessage);
+
+    // Remove the celebratory message after 3 seconds
+    setTimeout(() => {
+      document.body.removeChild(celebratoryMessage);
+    }, 3000);
+  }
+
   // Update savings balance on the UI
   function updateSavingsBalance() {
     document.getElementById("savingsBalance").textContent =
@@ -17,15 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Update the progress bar to 100%
       document.getElementById("progressBar").style.width = "100%";
+
+      // Display a celebratory message
+      displayCelebratoryMessage("Goal Met! You're doing great!");
     }
   }
-
-  // Update savings balance on the UI --Previous Code
-  // function updateSavingsBalance() {
-  //   document.getElementById("savingsBalance").textContent =
-  //     savingsBalance.toFixed(2);
-  //   updateGoalProgress(); // Call to update the progress bar
-  // }
 
   // Update goal amount and progress on the UI
   function updateGoal() {
@@ -58,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isNaN(amount) && amount > 0) {
         savingsBalance += amount;
         updateSavingsBalance();
+        clearInputField("savingsAmount");
       }
     });
 
@@ -69,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isNaN(amount) && amount > 0 && amount <= savingsBalance) {
         savingsBalance -= amount;
         updateSavingsBalance();
+        clearInputField("savingsAmount");
       }
     });
 
@@ -78,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!isNaN(target) && target > 0) {
       goalAmount = target;
       updateGoal();
+      clearInputField("goalTarget");
     }
   });
 
